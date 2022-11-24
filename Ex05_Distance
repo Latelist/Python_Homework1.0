@@ -1,0 +1,25 @@
+#Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве.
+
+def find_distance(dot1, dot2, dimensions):
+    distance = 0
+    for i in range(dimensions):
+        distance += (dot1[i] - dot2[i])**2
+
+    distance = distance ** 0.5
+    return distance
+
+try:
+    d = int(input('Enter dimensions quantity: '))
+
+    point1 = []
+    for i in range(d):
+        point1.append(int(input(f'Enter coordinate {i+1} of the first point: ')))
+
+    point2 = []
+    for i in range(d):
+        point2.append(int(input(f'Enter coordinate {i+1} of the second point: ')))
+
+
+    print(f'Distance between points equals {round(find_distance(point1, point2, d), 3)}')
+except:
+    print('Please, enter numbers next time.')

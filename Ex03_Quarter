@@ -1,0 +1,26 @@
+#Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт 
+# номер четверти плоскости, в которой находится эта точка.
+
+def define_quarter(x, y): 
+    if x > 0:
+        if y > 0:
+            return 1
+        else:
+            return 4
+    elif x < 0:
+        if y > 0:
+            return 2
+        else:
+            return 3
+    else:
+        print('Invalid coordinates')
+
+try: 
+    x = float(input('Enter coordinate X: '))
+    y = float(input('Enter coordinate Y: '))
+
+    print(f'The point lies in quarter {define_quarter(x,y)}')
+except:
+    print('Please enter digits for God\'s sake')
+
+
